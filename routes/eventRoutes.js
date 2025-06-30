@@ -1,8 +1,8 @@
 const express = require('express');
 const {
     addEvent, getEvents, joinEvent, getMyEvents, updateEvent, deleteEvent,
-} = require('../controllers/eventController');
-const protect = require('../middlewares/authMiddleware');
+} = require('../controller/eventController');
+const protect = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
