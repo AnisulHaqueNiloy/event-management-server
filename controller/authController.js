@@ -38,7 +38,7 @@ exports.login = async (req, res) => {
     } catch (err) {
         res.status(500).json({ message: 'Server error' });
     }
-};const User = require('../model/User');
+};
 const generateToken = require('../utils/generateToken');
 
 exports.register = async (req, res) => {
