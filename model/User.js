@@ -14,14 +14,8 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
 
 userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) return next();
-
-    try {
-        this.password = await bcrypt.hash(this.password, 10);
-        next();
-    } catch (err) {
-        next(err); // ❗ this is important!
-    }
+    this.password = await bcrypt.hash(this.password, 10);
+    next();
 });
-
 
 module.exports = mongoose.model('User', userSchema);
